@@ -12,10 +12,10 @@
 - **Auditable**: Users can selectively disclose transaction history when required.
 
 <div align="center">
-  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
-  ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) 
-  ![EVM Native](https://img.shields.io/badge/EVM-Native-blueviolet)
-  ![Network: Etherlink](https://img.shields.io/badge/Network-Etherlink%20Shadownet-blue)
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <img src="https://img.shields.io/badge/build-passing-brightgreen" />
+  <img src="https://img.shields.io/badge/EVM-Native-blueviolet" />
+  <img src="https://img.shields.io/badge/Network-Etherlink%20Shadownet-blue" />
 </div>
 
 <div align="center">
@@ -29,9 +29,11 @@
 ## ⚡ TL;DR
 Orinx brings private payments to **Etherlink Shadownet** using stealth addresses. Stay **non-custodial**, avoid pooled funds, and keep every transaction **unlinkable**.
 
+[▶️ **Watch the Demo Video**](https://youtu.be/TzzO6f4HdPQ)
+
 > **"Privacy is not about hiding bad things. It's about protecting good people."**
 
-[Demo Video](https://youtu.be/TzzO6f4HdPQ)
+
 
 ## 🚫 The Problem: The Glass House
 
@@ -369,15 +371,19 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ## ❓ FAQ
 
 - **Q: Which wallets is Orinx compatible with?**
+
   **A:** Orinx works alongside your existing wallet. It is compatible with **MetaMask**, **Rainbow**, **Coinbase Wallet**, and any WalletConnect-enabled wallet.    
 
 - **Q: Is Orinx meant to hide illicit activity?**
+
   **A: No.** Orinx is designed for **legitimate financial privacy**. It is **non-custodial** and supports **selective disclosure**.
 
 - **Q: Can I use Orinx for taxes and accounting?**
+
   **A: Yes.** You can export your full transaction history in one click.
 
 - **Q: Is this a Mixer (like Tornado Cash)?**
+
   **A: No.** Mixers pool funds. Orinx uses **Stealth Addresses** to derive unique, unlinked addresses for every payment. Your funds never mix with others.
 
 ---
