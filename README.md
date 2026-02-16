@@ -1,11 +1,22 @@
-# Orinx on Etherlink 🛡️
+# Orinx on Etherlink 🔒
 
-### The Privacy Layer for the Future of Finance.
+### The Privacy Layer for the EVM Era.
+**Orinx** allows users to receive, hold, and send funds onchain while protecting their **financial privacy**.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) 
-![EVM Native](https://img.shields.io/badge/EVM-Native-blueviolet)
-![Network: Etherlink](https://img.shields.io/badge/Network-Etherlink%20Shadownet-blue)
+## 🔐 Orinx at a Glance
+
+- **Zero-Trust Architecture**: Privacy guarantees remain intact even if the blockchain, frontend, or all external infrastructure are fully observable.
+- **Client-Side Privacy**: All sensitive cryptography and key derivation happens locally.
+- **Non-Custodial**: Keys never leave the user’s device.
+- **Recoverable**: Funds can always be recovered directly from the chain without Orinx UI.
+- **Auditable**: Users can selectively disclose transaction history when required.
+
+<div align="center">
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
+  ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) 
+  ![EVM Native](https://img.shields.io/badge/EVM-Native-blueviolet)
+  ![Network: Etherlink](https://img.shields.io/badge/Network-Etherlink%20Shadownet-blue)
+</div>
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -20,31 +31,29 @@ Orinx brings private payments to **Etherlink Shadownet** using stealth addresses
 
 > **"Privacy is not about hiding bad things. It's about protecting good people."**
 
-https://youtu.be/TzzO6f4HdPQ
+[Demo Video](https://youtu.be/TzzO6f4HdPQ)
 
 ## 🚫 The Problem: The Glass House
 
-Imagine living in a house made entirely of glass. Every time you receive a salary, donate to a cause, or pay for a coffee, the entire world watches.
+Blockchains are **architectures of surveillance**.
 
-**This is the current state of public blockchains.**
-
-Standard wallets are **radically transparent**. If you share your address once, you inadvertently dox your entire financial history to:
+By default, every transaction you make—payments, salary, medical bills, donations—is broadcast to the world forever. Standard wallets don't just leak your data; they **dox** your entire financial life to:
 *   **Ad Tech**: Building profiles of your net worth and spending habits.
 *   **Bad Actors**: Targeting you for phishing or extortion based on your balance.
 *   **Competitors**: Monitoring your business's cash flow and supply chain.
 
-**Real finance requires confidentiality.** Orinx bridges the gap between the transparent chains and the privacy we need.
+**Real finance requires confidentiality.** Orinx bridges the gap between transparent chains and the privacy we need.
 
 ---
 
-## 🛡️ The Solution: Mathematical Invisibility
+## 🕶️ The Solution: Cryptographic Privacy
 
-**Orinx** is a client-side protocol that brings **Stealth Addresses** to Etherlink.
+Orinx is an **on-chain privacy protocol** that brings **Stealth Addresses** to Etherlink.
 
 We decouple your **Public Identity** from your **On-Chain Assets**.
 
 1.  **Public Identity (The Meta-Address)**: You share a single, static ID (e.g., `alice@orinx`). Think of this as a **public instruction manual**. It tells people exactly how to generate a unique address for you, without you needing to be online.
-2.  **Private Receipt**: When Bob pays you, the protocol follows the instructions to generate a **unique, unlinked address** just for that payment.
+2.  **Private Settlement**: When Bob pays you, the protocol mathematically derives a **unique, unlinked address** just for that payment.
 3.  **Unified Dashboard**: Orinx aggregates all these scattered addresses into a single view. To you, it looks like one balance. To the blockchain, it looks like thousands of unrelated wallets.
 
 ---
@@ -54,8 +63,8 @@ We decouple your **Public Identity** from your **On-Chain Assets**.
 ### 1. Fortress-Level Security 🏰
 Orinx acts like a Hardware Wallet inside your browser.
 
-*   **Isolated Execution**: All sensitive cryptography (signing, derivation) happens in locally.
-*   **Zero Leakage**: Your private keys **NEVER** leave the worker context. The UI "views" your balance but cannot touch your keys.
+*   **Isolated Execution**: All sensitive cryptography (signing, derivation) happens locally.
+*   **Zero Leakage**: Your private keys **NEVER** leave your device. The UI "views" your balance but cannot touch your keys.
 *   **"Scorched Earth" Policy**: If you close the tab, the keys are wiped from memory instantly. Nothing is persisted.
 
 ### 2. Smart 2FA (Identity Binding) 🔐
@@ -64,14 +73,14 @@ Your seed phrase isn't enough. Standard wallets have a fatal flaw: if someone st
 Orinx implements Identity Binding:
 
 *   We bind your wallet keys to a **PIN/Password** using high-hardness cryptography.
-*   **The Result**: Even if an attacker steals your 12-word phrase, **they cannot access your funds** without your 2FA PIN.
-*   It is a second layer of defense baked into the mathematics of your address.
+*   **The Result**: Even if an attacker steals your 12-word phrase, **they cannot access your Orinx funds** without your 2FA PIN/Password.
+*   It is a **cryptographic second factor**, meaning your wallet address cannot be derived without your PIN.
 
 ### 3. Stealth Forwarding 🔄
 Move funds from one stealth address to another—without ever touching a public exchange.
 
-*   Pay a supplier, a friend, or an employee directly from your unlinked private balance.
-*   The transaction remains mathematically unlinked.
+*   Pay a supplier, a friend, or an employee directly from your **unlinked** private balance.
+*   The transaction remains mathematically **unlinked**.
 
 ### 4. Manual Recovery ("The Safety Net") 🚨
 We believe in "Trust, but Verify". Orinx is non-custodial.
@@ -81,8 +90,6 @@ We believe in "Trust, but Verify". Orinx is non-custodial.
 
 ### 5. Privacy 📕
 *   Even we (the developers) cannot see who you know and paid.
-
----
 
 ---
 
@@ -123,24 +130,35 @@ We bring "Web2 Usability" to Web3 Privacy.
 Orinx is built on a **"Trust Nothing"** architecture.
 
 ### 🛡️ Threat Model
-Orinx assumes the **blockchain is fully adversarial** and the **frontend is untrusted**. Privacy must hold even if all infrastructure except the client's local worker is observed.
+Orinx is designed under a zero-trust threat model.
+The blockchain and frontend are treated as untrusted, and privacy guarantees must hold even if all infrastructure except the client’s local worker is fully observable.
 
-### The Transaction Lifecycle (Step-by-Step)
-1.  **Resolution**: Sender resolves `alice@orinx` to her **Meta-Address** (Spending Pub + Viewing Pub) via the Registry.
-2.  **Derivation**: Sender generates an ephemeral key and calculates a **Shared Secret** using Elliptic Curve Diffie-Hellman (ECDH).
-3.  **The Registry**: Sender broadcasts an encrypted **Announcement** event to the `OrinxAnnouncer` contract.
-4.  **The Scan**: Alice's device silently scans incoming events.
-5.  **Recovery**: All Stealth Addresses that belongs to Alice are now ready to be used in a unified manner.
+### The Transaction Lifecycle
+```mermaid
+sequenceDiagram
+    participant Sender
+    participant Registry as OrinxRegistry
+    participant Announcer as OrinxAnnouncer
+    participant Alice as Alice (Receiver)
 
-### Smart Contract Architecture (V2)
-We split the logic to ensure future-proofing:
-*   **`OrinxRegistry.sol`**: The **Identity Layer**. Immutable. Maps `@username` to keys.
-*   **`OrinxAnnouncer.sol`**: The **Payment Layer**. Stateless. Emits events. This allows us to upgrade the payment logic (e.g. cheaper gas) without forcing everyone to migrate their username.
+    Sender->>Registry: 1. Resolve 'alice@orinx'
+    Registry-->>Sender: Return Meta-Address (Public Keys)
+    Sender->>Sender: 2. Derive Ephemeral Key & Shared Secret (ECDH)
+    Sender->>Announcer: 3. Send Funds + Encrypted Announcement
+    Announcer-->>Alice: 4. Emit Event (Ciphertext)
+    Alice->>Alice: 5. Scan & Decrypt (Locally)
+    Alice->>Alice: 6. Funds Detected & Recovered
+```
+
+### Smart Contract Architecture (Modular)
+We split the logic to ensure future-proofing and security:
+*   **`OrinxRegistry.sol` (Identity Layer)**: Immutable. Maps `@username` to `Meta-Address`. Enforces uniqueness and ownership.
+*   **`OrinxAnnouncer.sol` (Stateless Payment Layer)**: Handles the flow of funds. It emits events for scanning but **holds no user state**, ensuring maximum gas efficiency.
 
 ### The Stack
 *   **Frontend**: React, TypeScript, Viem, Wagmi.
-*   **Cryptography**: `@noble/secp256k1`, `scrypt-js`, `hkdf`.
-*   **Contracts**: Solidity v0.8.20.
+*   **Cryptography**: `@noble/secp256k1`, `scrypt-js`, `hkdf` (Client-side execution).
+*   **Contracts**: Solidity v0.8.28.
 *   **Indexing**: The Graph (Decentralized Subgraph).
 
 ---
@@ -179,7 +197,7 @@ Orinx provides strong on-chain privacy, but **not perfect anonymity**.
 
 ---
 
-## 🧠 Our Philosophy (Founder Vision)
+## 🧠 The Orinx Manifesto
 
 **Why We Built This**: We aren't just building a wallet wrapper. We are building the **privacy layer for the future of finance**.
 
@@ -190,8 +208,9 @@ We don't just write code; we ship products.
 *   **Mobile-Native Experience**: We bring privacy to the **Mobile Era**. We optimized every interaction for touch devices because we know that **payments happen on the go**, not just on desktops.
 
 ### Core Values
+*   **Privacy is a Human Right**: Not a feature toggle. It is the default state of a free society.
+*   **Code over Trust**: We rely on **Elliptic Curve Cryptography**, not promises.
 *   **Extreme Velocity**: We ship fast. If a feature blocks adoption, we build it.
-*   **Resilience**: We debug at 4 AM so you can transact at 9 AM.
 
 > **"We bridge the gap between 'cypherpunk' tech and 'fintech' usability."**
 
@@ -205,8 +224,8 @@ We believe privacy tools must be open and verifiable.
 
 | Chain | Network ID | Contract | Address | Explorer |
 | :--- | :--- | :--- | :--- | :--- |
-| **Etherlink** | `127823` | **OrinxRegistry** | `0x6fb4986C0deb035d69d5089aE9824F2293aa02B0` | [View](https://testnet-explorer.etherlink.com/address/0x6fb4986C0deb035d69d5089aE9824F2293aa02B0) |
-| **Etherlink** | `127823` | **OrinxAnnouncer** | `0xd6bf5AA102b7125CF7ee587F26d41963eD4999bA` | [View](https://testnet-explorer.etherlink.com/address/0xd6bf5AA102b7125CF7ee587F26d41963eD4999bA) |
+| **Etherlink** | `127823` | **OrinxRegistry** | `0x6fb4986C0deb035d69d5089aE9824F2293aa02B0` | [View](https://shadownet.explorer.etherlink.com/address/0x6fb4986C0deb035d69d5089aE9824F2293aa02B0?tab=index) |
+| **Etherlink** | `127823` | **OrinxAnnouncer** | `0xd6bf5AA102b7125CF7ee587F26d41963eD4999bA` | [View](https://shadownet.explorer.etherlink.com/address/0xd6bf5AA102b7125CF7ee587F26d41963eD4999bA?tab=index) |
 
 ### Network Configuration for Wallets
 
@@ -215,7 +234,17 @@ To interact with Orinx on Etherlink, ensure your wallet is configured with:
 - **RPC URL**: `https://node.shadownet.etherlink.com`
 - **Chain ID**: `127823`
 - **Currency**: `XTZ`
-- **Explorer**: `https://testnet-explorer.etherlink.com/`
+- **Explorer**: `https://shadownet.explorer.etherlink.com/`
+
+## 🚀 Try Orinx on Etherlink
+
+**Send a private payment on Etherlink in under 60 seconds.**
+
+1.  **Get Testnet XTZ**: Visit the [Etherlink Faucet](https://shadownet.faucet.etherlink.com/) to claim testnet tokens.
+2.  **Connect**: Go to the [Orinx App](https://orinx.vercel.app/) and connect your wallet.
+3.  **Register**: Claim your unique stealth username (e.g., `alice@orinx`).
+4.  **Transact**: Send and receive private payments using XTZ or Tokens on Etherlink.
+
 
 ---
 
@@ -240,18 +269,6 @@ Orinx is designed for **legitimate privacy**, not illicit evasion.
 
 ---
 
-## 🚀 Try Orinx on Etherlink
-
-**Send a private payment on Etherlink in under 60 seconds.**
-
-1.  **Get Testnet XTZ**: Visit the [Etherlink Faucet](https://faucet.etherlink.com/) to claim testnet tokens.
-2.  **Connect**: Go to the [Orinx App](https://orinx.vercel.app/) and connect your wallet.
-3.  **Register**: Claim your unique stealth username (e.g., `alice@orinx`).
-4.  **Transact**: Send and receive private payments using XTZ or Tokens on Etherlink.
-
-
-
-
 ### Orinx Contracts (Etherlink)
 
 This repository contains the core smart contracts for the Orinx protocol on Etherlink.
@@ -263,18 +280,17 @@ This repository contains the core smart contracts for the Orinx protocol on Ethe
 
 ```bash
 # Clone the repository
-git clone https://github.com/orinx-org/orinx-contracts-etherlink.git
+  git clone https://github.com/orinx-org/orinx-contracts-etherlink.git
 
 # Navigate to the contracts
-cd orinx-contracts-etherlink
+  cd orinx-contracts-etherlink
 
 # Install dependencies:
-    ```bash
-    npm install
-    ```
+  npm install
+
 # Configure environment variables:
-    - Copy `.env.example` to `.env`
-    - Set `PRIVATE_KEY`, `ETHERLINK_RPC_URL`, and `ETHERSCAN_API_KEY`.
+  - Copy `.env.example` to `.env`
+  - Set `PRIVATE_KEY`, `ETHERLINK_RPC_URL`, and `ETHERSCAN_API_KEY`.
 ```
 
 ### Usage
@@ -352,17 +368,17 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ## ❓ FAQ
 
-**Q: Which wallets is Orinx compatible with?**
-**A:** Orinx works alongside your existing wallet. It is compatible with **MetaMask**, **Rainbow**, **Coinbase Wallet**, and any WalletConnect-enabled wallet.
+- **Q: Which wallets is Orinx compatible with?**
+  **A:** Orinx works alongside your existing wallet. It is compatible with **MetaMask**, **Rainbow**, **Coinbase Wallet**, and any WalletConnect-enabled wallet.    
 
-**Q: Is Orinx meant to hide illicit activity?**
-**A: No.** Orinx is designed for **legitimate financial privacy**. It is **non-custodial** and supports **selective disclosure**.
+- **Q: Is Orinx meant to hide illicit activity?**
+  **A: No.** Orinx is designed for **legitimate financial privacy**. It is **non-custodial** and supports **selective disclosure**.
 
-**Q: Can I use Orinx for taxes and accounting?**
-**A: Yes.** You can export your full transaction history in one click.
+- **Q: Can I use Orinx for taxes and accounting?**
+  **A: Yes.** You can export your full transaction history in one click.
 
-**Q: Is this a Mixer (like Tornado Cash)?**
-**A: No.** Mixers pool funds. Orinx uses **Stealth Addresses** to derive unique, unlinked addresses for every payment. Your funds never mix with others.
+- **Q: Is this a Mixer (like Tornado Cash)?**
+  **A: No.** Mixers pool funds. Orinx uses **Stealth Addresses** to derive unique, unlinked addresses for every payment. Your funds never mix with others.
 
 ---
 
